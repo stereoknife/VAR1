@@ -4,32 +4,33 @@ using UnityEngine;
 
 public class break_net : MonoBehaviour
 {
-    public float breakThreshold = 5f; // The speed threshold at which the object breaks
-    public GameObject intactObject;   // The intact version of the object
-    public GameObject brokenObject;   // The broken version of the object
+    [SerializeField] float breakThreshold = 5f; // The speed threshold at which the object breaks
+    [SerializeField] GameObject intactObject;   // The intact version of the object
+    [SerializeField] GameObject brokenObject;   // The broken version of the object
 
-    private Rigidbody rb;             // Rigidbody of the object
+    //private Rigidbody rb;             // Rigidbody of the object
     private bool isBroken = false;    // Tracks if the object is already broken
 
+    private Vector3 prevPosition;
+
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        rb = GetComponent<Rigidbody>();
+        //rb = GetComponent<Rigidbody>();
         intactObject.SetActive(true); // Start with the intact object visible
         brokenObject.SetActive(false); // Start with the broken object hidden
+        prevPosition = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Check the speed of the object
-        float speed = rb.velocity.magnitude;
-
-        // If speed exceeds the threshold and the object is not yet broken
-        if (speed > breakThreshold && !isBroken)
-        {
-            BreakObject();
-        }    
+        var currentPosition = transform.position;
+        var positionDelta = currentPosition - prevPosition;
+        
+        if (positionDelta.sqrMagnitude > breakThreshold) BreakObject();
+        
+        prevPosition = currentPosition;
     }
 
     // Function to handle breaking the object

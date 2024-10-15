@@ -8,7 +8,7 @@ public class break_net : MonoBehaviour
     [SerializeField] GameObject intactObject;   // The intact version of the object
     [SerializeField] GameObject brokenObject;   // The broken version of the object
 
-    //private Rigidbody rb;             // Rigidbody of the object
+    private Rigidbody rb;             // Rigidbody of the object
     private bool isBroken = false;    // Tracks if the object is already broken
 
     private Vector3 prevPosition;
@@ -25,12 +25,23 @@ public class break_net : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         var currentPosition = transform.position;
         var positionDelta = currentPosition - prevPosition;
         
         if (positionDelta.sqrMagnitude > breakThreshold) BreakObject();
         
         prevPosition = currentPosition;
+        */
+        
+        // Check the speed of the object
+        float speed = rb.velocity.magnitude;
+
+        // If speed exceeds the threshold and the object is not yet broken
+        if (speed > breakThreshold && !isBroken)
+        {
+            BreakObject();
+        }  
     }
 
     // Function to handle breaking the object

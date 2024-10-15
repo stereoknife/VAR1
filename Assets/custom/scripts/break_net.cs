@@ -10,11 +10,13 @@ public class break_net : MonoBehaviour
 
     private Rigidbody rb;             // Rigidbody of the object
     private bool isBroken = false;    // Tracks if the object is already broken
+    private OVRGrabbable grabbable;   // Reference to the OVRGrabbable component
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        grabbable = GetComponent<OVRGrabbable>();
         intactObject.SetActive(true); // Start with the intact object visible
         brokenObject.SetActive(false); // Start with the broken object hidden
     }
@@ -22,14 +24,21 @@ public class break_net : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Check the speed of the object
-        float speed = rb.velocity.magnitude;
-
-        // If speed exceeds the threshold and the object is not yet broken
-        if (speed > breakThreshold && !isBroken)
+        // Check if the object is being grabbed
+        if (grabbable.isGrabbed)
         {
-            BreakObject();
-        }    
+            // Get the hand that is grabbing the object
+            OVRGrabber grabber = grabbable.grabbedBy;
+
+            // Check the speed of the hand
+            float handSpeed = grabber.GetComponent<Rigidbody>().velocity.magnitude;
+
+            // If speed exceeds the threshold and the object is not yet broken
+            if (handSpeed > breakThreshold && !isBroken)
+            {
+                BreakObject();
+            }
+        }
     }
 
     // Function to handle breaking the object
@@ -42,16 +51,15 @@ public class break_net : MonoBehaviour
         brokenObject.SetActive(true);
 
         // Optionally, disable grabbing so the user can't pick it up anymore
-        // OVRGrabbable grabbable = GetComponent<OVRGrabbable>();
         // if (grabbable != null)
         // {
         //     grabbable.enabled = false;
         // }
 
-        // // If you want physics to affect the broken pieces:
-        // foreach (Rigidbody piece in brokenObject.GetComponentsInChildren<Rigidbody>())
-        // {
-        //     piece.isKinematic = false; // Allow broken pieces to fall and scatter
-        // }
+        // If you want physics to affect the broken pieces:
+        foreach (Rigidbody piece in brokenObject.GetComponentsInChildren<Rigidbody>())
+        {
+            piece.isKinematic = false; // Allow broken pieces to fall and scatter
+        }
     }
 }

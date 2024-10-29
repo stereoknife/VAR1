@@ -1,69 +1,66 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class break_net : MonoBehaviour
 {
-    [SerializeField] float breakThreshold = 5f; // The speed threshold at which the object breaks
+    //0.2 or 0.3
+    [SerializeField] float breakThreshold = 0.04f; // The speed threshold at which the object breaks
     [SerializeField] GameObject intactObject;   // The intact version of the object
     [SerializeField] GameObject brokenObject;   // The broken version of the object
 
     private Rigidbody rb;             // Rigidbody of the object
-    private bool isBroken = false;    // Tracks if the object is already broken
+    private XRGrabInteractable grab;
+    
+    private bool isBroken = false;   // Tracks if the object is already broken
+    private bool isWet = false;
+    private bool isGrabbed = false;
+    private bool isTouching = false;
 
     private Vector3 prevPosition;
-
-    // Start is called before the first frame update
+    
     void Awake()
     {
-        //rb = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
+        grab = GetComponent<XRGrabInteractable>();
         intactObject.SetActive(true); // Start with the intact object visible
         brokenObject.SetActive(false); // Start with the broken object hidden
         prevPosition = transform.position;
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
-        /*
-        var currentPosition = transform.position;
-        var positionDelta = currentPosition - prevPosition;
+        if (!isGrabbed) return;
+        if (!isWet) return;
+        if (!isTouching) return;
         
-        if (positionDelta.sqrMagnitude > breakThreshold) BreakObject();
+        var speed = rb.velocity.sqrMagnitude;
         
-        prevPosition = currentPosition;
-        */
-        
-        // Check the speed of the object
-        float speed = rb.velocity.magnitude;
-
-        // If speed exceeds the threshold and the object is not yet broken
         if (speed > breakThreshold && !isBroken)
         {
-            BreakObject();
+            isBroken = true;
+
+            // Swap the intact object for the broken one
+            intactObject.SetActive(false);
+            brokenObject.SetActive(true);
         }  
     }
 
-    // Function to handle breaking the object
-    void BreakObject()
+    private void OnEnable()
     {
-        isBroken = true;
+        grab.selectEntered.AddListener(OnGrabbed);
+    }
 
-        // Swap the intact object for the broken one
-        intactObject.SetActive(false);
-        brokenObject.SetActive(true);
+    private void OnDisable()
+    {
+        grab.selectEntered.RemoveListener(OnGrabbed);
+    }
 
-        // Optionally, disable grabbing so the user can't pick it up anymore
-        // OVRGrabbable grabbable = GetComponent<OVRGrabbable>();
-        // if (grabbable != null)
-        // {
-        //     grabbable.enabled = false;
-        // }
-
-        // // If you want physics to affect the broken pieces:
-        // foreach (Rigidbody piece in brokenObject.GetComponentsInChildren<Rigidbody>())
-        // {
-        //     piece.isKinematic = false; // Allow broken pieces to fall and scatter
-        // }
+    private void OnGrabbed(SelectEnterEventArgs args)
+    {
+        isGrabbed = true;
     }
 }

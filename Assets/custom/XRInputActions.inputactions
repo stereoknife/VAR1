@@ -1,0 +1,130 @@
+{
+    "name": "XRInputActions",
+    "maps": [
+        {
+            "name": "GameControls",
+            "id": "a1e1f1b5-7c18-4c9b-a0b1-9057e1019d1a",
+            "actions": [
+                {
+                    "name": "TriggerPress",
+                    "type": "Button",
+                    "id": "792d66e3-9d4b-4270-a7c9-8f3314eebe3d",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Other",
+                    "type": "Button",
+                    "id": "5c3df9ab-2248-483e-b277-ea0342fe514e",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "d56a52cc-9314-4cd0-bc1f-e9f6f285a893",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "f2d8ba5b-42d4-4e92-aecf-8c9a03f003ea",
+                    "path": "<XRController>{RightHand}/{MenuButton}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TriggerPress",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b707b41f-f669-4a2f-9b4d-18ecda900ea5",
+                    "path": "<XRController>{LeftHand}/{MenuButton}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Other",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fbf33b74-9ea1-420c-a6bc-bf34885a0476",
+                    "path": "<XRController>{RightHand}/{Secondary2DAxisClick}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "TeleportControls",
+            "id": "4ac9cd11-5126-4c67-b68f-cb8c7e48cde3",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "0473b965-dc40-4063-b46e-01c00c0941fd",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "4406dd7a-f366-49c8-a305-f10734a8bf1f",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "MenuControls",
+            "id": "070c0d5a-54b4-48a4-9e93-17bd35436199",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "27ed6763-3875-4d5f-bd6b-93ba9b0ac68b",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "dfaadc1a-a852-4f16-a367-f32c885c6c46",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

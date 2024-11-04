@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 5ff6ca8f70836864f9c52d6965bf1be6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -16.310541
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5ff6ca8f70836864f9c52d6965bf1be6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.4541812
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5ff6ca8f70836864f9c52d6965bf1be6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -21.133339
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5ff6ca8f70836864f9c52d6965bf1be6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -51,6 +51,34 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5ff6ca8f70836864f9c52d6965bf1be6, type: 3}
       propertyPath: m_Name
       value: arcos
+      objectReference: {fileID: 0}
+    - target: {fileID: 6684295394808222897, guid: 5ff6ca8f70836864f9c52d6965bf1be6, type: 3}
+      propertyPath: m_DirtyAABB
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6684295394808222897, guid: 5ff6ca8f70836864f9c52d6965bf1be6, type: 3}
+      propertyPath: m_AABB.m_Center.x
+      value: -0.000004135407
+      objectReference: {fileID: 0}
+    - target: {fileID: 6684295394808222897, guid: 5ff6ca8f70836864f9c52d6965bf1be6, type: 3}
+      propertyPath: m_AABB.m_Center.y
+      value: 0.0017621968
+      objectReference: {fileID: 0}
+    - target: {fileID: 6684295394808222897, guid: 5ff6ca8f70836864f9c52d6965bf1be6, type: 3}
+      propertyPath: m_AABB.m_Extent.x
+      value: 0.00010894051
+      objectReference: {fileID: 0}
+    - target: {fileID: 6684295394808222897, guid: 5ff6ca8f70836864f9c52d6965bf1be6, type: 3}
+      propertyPath: m_AABB.m_Extent.y
+      value: 0.0010212798
+      objectReference: {fileID: 0}
+    - target: {fileID: 6684295394808222897, guid: 5ff6ca8f70836864f9c52d6965bf1be6, type: 3}
+      propertyPath: m_AABB.m_Extent.z
+      value: 0.004269226
+      objectReference: {fileID: 0}
+    - target: {fileID: 6684295394808222897, guid: 5ff6ca8f70836864f9c52d6965bf1be6, type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[0]
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

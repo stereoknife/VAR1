@@ -9,6 +9,7 @@ public class CanvasController : MonoBehaviour
     public float distanceFromUser = 2.0f; // Distance to place the canvas in front of the user
     private bool isVisible = false;
     public GameObject canvas; // Assign the Canvas in the Inspector
+    public SkinnedMeshRenderer skinnedMeshRenderer;
 
     void Start()
     {
@@ -19,11 +20,10 @@ public class CanvasController : MonoBehaviour
     void Update()
     {
         // Check if the action is triggered
-        float OpenMenu = triggerPressAction.action.ReadValue<float>();
-        Debug.Log(OpenMenu);
-        if ( OpenMenu >=0.1f)
+        bool OpenMenu = triggerPressAction.action.WasPressedThisFrame();
+        if ( OpenMenu )
         {
-            Debug.Log("Trigger button pressed, opening canvas.");
+            Debug.Log("Menu Opened");
             OpenCanvas();
         }
     }
@@ -40,12 +40,14 @@ public class CanvasController : MonoBehaviour
     {
         isVisible = !isVisible;
         canvas.SetActive(isVisible);
+        skinnedMeshRenderer.enabled = isVisible;
     }
 
     public void OpenCanvas()
     {
         isVisible = true;
-        canvas.SetActive(true);
+        canvas.SetActive(isVisible);
+        skinnedMeshRenderer.enabled = isVisible;
         MoveCanvasInFrontOfUser();
     }
 }

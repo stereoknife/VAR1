@@ -21,13 +21,13 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: yellow
-  m_Shader: {fileID: -6465566751694194690, guid: 834b793e8f9edae4a90ae15c4c19379a, type: 3}
+  m_Shader: {fileID: 4800000, guid: db3e79c00af89457889b6e0106dcb0ba, type: 3}
   m_Parent: {fileID: 2100000, guid: 19dddb9e6fec9e34f8ce3f294bfd2c67, type: 2}
-  m_ModifiedSerializedProperties: 0
+  m_ModifiedSerializedProperties: 4
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -37,7 +37,9 @@ Material:
     serializedVersion: 3
     m_TexEnvs: []
     m_Ints: []
-    m_Floats: []
+    m_Floats:
+    - _Glossiness: 0.586
     m_Colors:
+    - _Color: {r: 1, g: 0.66662425, b: 0, a: 1}
     - _RGB: {r: 0.7924528, g: 0.5833165, b: 0.078497685, a: 0}
   m_BuildTextureStacks: []

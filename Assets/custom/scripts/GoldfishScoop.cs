@@ -15,8 +15,31 @@ public class GoldfishScoop : MonoBehaviour
             Debug.Log("Scooping goldfish");
             ScoopGoldfish(other.gameObject);
         }
+        if (other.gameObject.CompareTag("BucketGoldfish"))
+        {
+            // Store the goldfish
+            Debug.Log("Storing goldfish");
+            StoreGoldifsh(other.gameObject);
+        }
     }
 
+    private void StoreGoldifsh(GameObject bucket)
+    {
+        // Store the scoopedGoldfish list in the  GameObject bucket
+        if (bucket != null && scoopedGoldfish.Count > 0)
+        {
+            // Parent the goldfish to the bucket
+            foreach (GameObject goldfish in scoopedGoldfish)
+            {
+                goldfish.transform.SetParent(bucket.transform);
+                goldfish.transform.localPosition = Vector3.zero; // Center inside the bucket
+            }
+            bucket.GetComponent<BucketGoldfish>().PopulateScoopedGoldfish(scoopedGoldfish);
+            Debug.Log("Stored " + scoopedGoldfish.Count + " goldfish in the bucket");
+            // Clear the scoopedGoldfish list
+            scoopedGoldfish.Clear();
+        }
+    }
     private void ScoopGoldfish(GameObject goldfish)
     {
         // Add to scooped list

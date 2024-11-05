@@ -36,8 +36,18 @@ public class GoldfishScoop : MonoBehaviour
             }
             bucket.GetComponent<BucketGoldfish>().PopulateScoopedGoldfish(scoopedGoldfish);
             Debug.Log("Stored " + scoopedGoldfish.Count + " goldfish in the bucket");
+            
             // Clear the scoopedGoldfish list
-            scoopedGoldfish.Clear();
+            CleanList();
+        }
+    }
+
+    public void CleanList()
+    {
+        scoopedGoldfish.Clear();
+        foreach (Transform child in scoopContainer)
+        {
+            Destroy(child.gameObject);
         }
     }
     private void ScoopGoldfish(GameObject goldfish)

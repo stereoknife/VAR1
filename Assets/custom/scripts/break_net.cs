@@ -94,6 +94,9 @@ public class break_net : MonoBehaviour
             // Disable the intact object and enable the broken object
             intactObject.SetActive(false);
             brokenObject.SetActive(true);
+
+            // get the intactObject elemen that has the GoldfishScoop script and execute the CleanList method
+            intactObject.GetComponent<GoldfishScoop>().CleanList();
         }
     }
 

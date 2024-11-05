@@ -2201,6 +2201,7 @@ GameObject:
   m_Component:
   - component: {fileID: 771394779}
   - component: {fileID: 771394778}
+  - component: {fileID: 771394780}
   m_Layer: 0
   m_Name: Cylinder spawner
   m_TagString: Untagged
@@ -2236,6 +2237,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1870477531}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &771394780
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771394777}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.2
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &777251077 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7388437369463877097, guid: a06a76b77b878654ebc61842440309f3, type: 3}
@@ -3000,6 +3022,7 @@ GameObject:
   m_Component:
   - component: {fileID: 993418346}
   - component: {fileID: 993418345}
+  - component: {fileID: 993418347}
   m_Layer: 0
   m_Name: Cube spawner
   m_TagString: Untagged
@@ -3035,6 +3058,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1870477531}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &993418347
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 993418344}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.2
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1011437872
 GameObject:
   m_ObjectHideFlags: 0
@@ -3045,6 +3089,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1011437874}
   - component: {fileID: 1011437873}
+  - component: {fileID: 1011437875}
   m_Layer: 0
   m_Name: Prism spawner
   m_TagString: Untagged
@@ -3080,6 +3125,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1870477531}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &1011437875
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1011437872}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.2
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1012408190
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -79,7 +79,7 @@ public class break_net : MonoBehaviour
         if (intactObjectRenderer != null)
         {
             // Map the danger level to a color (green when safe, red when dangerous)
-            Color color = Color.Lerp(Color.green, Color.red, dangerLevel / maxDangerLevel);
+            Color color = Color.Lerp(Color.white, Color.red, dangerLevel / maxDangerLevel);
             intactObjectRenderer.material.color = color;
         }
     }

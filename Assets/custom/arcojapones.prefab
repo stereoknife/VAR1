@@ -80,6 +80,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 3fb025c34ff2c3c46a358065fc1dd512, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5fb00d29fd90c964cb857d4bc6d1e598, type: 2}
     - target: {fileID: 919132149155446097, guid: 3fb025c34ff2c3c46a358065fc1dd512, type: 3}
       propertyPath: m_Name
       value: arco japones

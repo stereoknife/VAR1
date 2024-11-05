@@ -23,4 +23,13 @@ public class BucketGoldfish : MonoBehaviour
         Debug.Log("Got"+goldfish.Count+" goldfish from the net");
         Debug.Log("Populated " + scoopedGoldfish.Count + " goldfish in the bucket");
     }
+    public void CleanList()
+    {
+        scoopedGoldfish.Clear();
+        // remove all the goldfish from the bucket
+        foreach (Transform child in transform)
+        {
+            Destroy(child.gameObject);
+        }
+    }
 }

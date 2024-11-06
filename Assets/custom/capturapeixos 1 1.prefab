@@ -453,7 +453,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   breakThreshold: 0.04
-  maxSafeVelocity: 0.2
+  maxSafeVelocity: 100
   dangerIncreaseRate: 1
   dangerDecreaseRate: 0.2
   maxDangerLevel: 100

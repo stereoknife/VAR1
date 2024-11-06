@@ -5,35 +5,31 @@ using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
-[RequireComponent(typeof(SphereCollider))]
 public class ShapeSpawner : MonoBehaviour
 {
     [SerializeField] private Transform prefab;
+    [SerializeField] private float distance;
 
-    private XRGrabInteractable interactable;
+    private float distsq;
     private Transform lastInstance;
+    private Transform t;
 
     // Start is called before the first frame update
     void Start()
     {
+        distsq = distance * distance;
+        t = transform;
         Spawn();
     }
 
     void Spawn()
     {
         lastInstance = Instantiate(prefab, transform.position, Quaternion.identity);
-        interactable = lastInstance.gameObject.GetComponent<XRGrabInteractable>();
-        interactable.selectEntered.AddListener(OnGrab);
     }
 
-    void OnGrab(SelectEnterEventArgs args)
+    private void Update()
     {
-        interactable.selectEntered.RemoveListener(OnGrab);
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.transform == lastInstance)
+        if ((t.position - lastInstance.position).sqrMagnitude > distsq)
         {
             Spawn();
         }

@@ -6377,7 +6377,6 @@ GameObject:
   m_Component:
   - component: {fileID: 771394779}
   - component: {fileID: 771394778}
-  - component: {fileID: 771394780}
   m_Layer: 0
   m_Name: Cylinder spawner
   m_TagString: Untagged
@@ -6398,6 +6397,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 7176425799282445758, guid: 7440d0b37d5b14b99ab4d1d162a07967, type: 3}
+  distance: 0
 --- !u!4 &771394779
 Transform:
   m_ObjectHideFlags: 0
@@ -6413,27 +6413,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1870477531}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &771394780
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 771394777}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.2
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &777251077 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7388437369463877097, guid: a06a76b77b878654ebc61842440309f3, type: 3}
@@ -7911,7 +7890,6 @@ GameObject:
   m_Component:
   - component: {fileID: 993418346}
   - component: {fileID: 993418345}
-  - component: {fileID: 993418347}
   m_Layer: 0
   m_Name: Cube spawner
   m_TagString: Untagged
@@ -7932,6 +7910,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 5684139682970157696, guid: 8725ea92ed49b433b8eaa79a7c8bed50, type: 3}
+  distance: 0
 --- !u!4 &993418346
 Transform:
   m_ObjectHideFlags: 0
@@ -7947,27 +7926,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1870477531}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &993418347
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 993418344}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.2
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1011437872
 GameObject:
   m_ObjectHideFlags: 0
@@ -7978,7 +7936,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1011437874}
   - component: {fileID: 1011437873}
-  - component: {fileID: 1011437875}
   m_Layer: 0
   m_Name: Prism spawner
   m_TagString: Untagged
@@ -7999,6 +7956,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 6377250777117039537, guid: 15d6e54c71a274cb98f3b81ee92545e2, type: 3}
+  distance: 0
 --- !u!4 &1011437874
 Transform:
   m_ObjectHideFlags: 0
@@ -8014,27 +7972,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1870477531}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &1011437875
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1011437872}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.2
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1012408190
 PrefabInstance:
   m_ObjectHideFlags: 0

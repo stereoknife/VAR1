@@ -31,7 +31,18 @@ public class CarMount : MonoBehaviour
 
         // Parent the XR Rig to the car to follow its movement
         xrRig.transform.parent = transform;
+
+        // Align the XR Rig's Y rotation with the car's Y rotation
+        Vector3 eulerAngles = xrRig.transform.eulerAngles;
+        eulerAngles.y = transform.eulerAngles.y;
+        xrRig.transform.eulerAngles = eulerAngles;
         
+        // Deactivate the character controller
+        var characterController = xrRig.GetComponent<CharacterController>();
+        if (characterController != null)
+        {
+            characterController.enabled = false;
+        }
         isMounted = true;
     }
 

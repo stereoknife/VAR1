@@ -150,6 +150,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0aae903f5a9a9ea4fb69fa94e02c07f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  accelerateAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Accelerate
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 3be55d92-b4c5-4292-aba9-83e593a4cd25
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  brakeAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Brake
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 7a4e0b5d-e9af-4c75-974a-7bccb61b8b9c
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  steerAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Steer
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: a895e082-0bc6-45ee-9ac3-961313c469f9
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  inputActions: {fileID: 0}
+  accelerationForce: 10
+  brakingForce: 10
+  maxSpeed: 20
 --- !u!114 &3373368637219302048
 MonoBehaviour:
   m_ObjectHideFlags: 0

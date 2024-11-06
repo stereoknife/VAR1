@@ -22,7 +22,7 @@ public class CarController : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        rb.isKinematic = true; // Disable movement until the user mounts the car
+        // rb.isKinematic = true; // Disable movement until the user mounts the car
     }
 
     void Update()
@@ -69,12 +69,16 @@ public class CarController : MonoBehaviour
     public void MountCar()
     {
         isMounted = true;
-        rb.isKinematic = false; // Enable physics
+        // rb.isKinematic = false; // Enable physics
 
         // Enable CarControls and disable other action maps
         inputActions.FindActionMap("CarControls").Enable();
         inputActions.FindActionMap("XRI Left Locomotion").Disable();
+        // inputActions.FindActionMap("XRI Left Interaction").Disable();
+        // inputActions.FindActionMap("XRI Left").Disable();
         inputActions.FindActionMap("XRI Right Locomotion").Disable();
+        // inputActions.FindActionMap("XRI Right Interaction").Disable();
+        // inputActions.FindActionMap("XRI Right").Disable();
 
         accelerateAction.action.Enable();
         brakeAction.action.Enable();
@@ -84,7 +88,7 @@ public class CarController : MonoBehaviour
     public void UnmountCar()
     {
         isMounted = false;
-        rb.isKinematic = true; // Disable physics when unmounted
+        // rb.isKinematic = true; // Disable physics when unmounted
         rb.velocity = Vector3.zero;
 
         // Disable CarControls and re-enable other action maps

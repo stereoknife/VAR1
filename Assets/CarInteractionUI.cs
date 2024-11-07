@@ -4,6 +4,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class CarInteractionUI : MonoBehaviour
 {
     public Canvas carUICanvas;
+    public Canvas carUIColorCanvas;
 
     private void Awake()
     {
@@ -12,6 +13,10 @@ public class CarInteractionUI : MonoBehaviour
 
     public void OnHoverEnter(HoverEnterEventArgs args)
     {
+        if (carUICanvas.enabled || carUIColorCanvas.enabled)
+        {
+            return;
+        }
         carUICanvas.enabled = true;  // Show UI when user hovers
     }
 

@@ -4,6 +4,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class CarMount : MonoBehaviour
 {
     public Transform mountPoint;
+    public Canvas canvas1;
     public GameObject xrRig;
     private bool isMounted = false;
 
@@ -43,6 +44,9 @@ public class CarMount : MonoBehaviour
         {
             characterController.enabled = false;
         }
+
+        // Hide the canvas
+        canvas1.enabled = false;
         isMounted = true;
     }
 

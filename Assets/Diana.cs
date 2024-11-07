@@ -11,8 +11,8 @@ public class Diana : MonoBehaviour
     
     void Awake()
     {
-        var mr = GetComponent<MeshRenderer>();
-        size = Mathf.Max(mr.bounds.extents.x, Mathf.Max(mr.bounds.extents.y, mr.bounds.extents.z));
+        var bounds = GetComponent<MeshCollider>().bounds;
+        size = Mathf.Max(bounds.extents.x, Mathf.Max(bounds.extents.y, bounds.extents.z));
         size /= 2;
     }
     

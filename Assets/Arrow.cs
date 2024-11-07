@@ -70,6 +70,7 @@ public class Arrow : MonoBehaviour
     void OnGrab(SelectEnterEventArgs args)
     {
         isGrabbed = true;
+        transform.parent = null;
     }
 
     void OnDrop(SelectExitEventArgs args)
@@ -90,6 +91,7 @@ public class Arrow : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
+        if (other.gameObject.CompareTag("Arc")) return;
         if (rb.velocity.sqrMagnitude > attachSpeed * attachSpeed)
         {
             rb.isKinematic = true;

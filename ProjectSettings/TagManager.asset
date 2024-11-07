@@ -10,6 +10,7 @@ TagManager:
   - Anchor
   - BucketGoldfish
   - BuildBlock
+  - Fletxa
   layers:
   - Default
   - TransparentFX

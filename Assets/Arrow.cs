@@ -80,9 +80,9 @@ public class Arrow : MonoBehaviour
         if (isOnString)
         {
             rb.AddForce(transform.forward * bowStrength * drawStrength);
+            _string.SetBlendShapeWeight(0, 0);
         }
         
-        _string.SetBlendShapeWeight(0, 0);
         isGrabbed = false;
         isOnString = false;
         _bow = null;
@@ -93,7 +93,7 @@ public class Arrow : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag("Arc")) return;
+        if (other.gameObject.CompareTag("Arc") || other.gameObject.CompareTag("Fletxa")) return;
         if (rb.velocity.sqrMagnitude > attachSpeed * attachSpeed)
         {
             rb.isKinematic = true;

@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 5195498744459721273}
   m_Layer: 0
   m_Name: Fletxa
-  m_TagString: Untagged
+  m_TagString: Fletxa
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -304,3 +304,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4451d746204b35a46a66efd18e741def, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attachSpeed: 5
+  bowStrength: 5

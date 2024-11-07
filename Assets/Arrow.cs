@@ -8,6 +8,9 @@ using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class Arrow : MonoBehaviour
 {
+    [SerializeField] private float attachSpeed = 5f;
+    [SerializeField] private float bowStrength = 5f;
+    
     private XRGrabInteractable _interactable;
 
     private bool isGrabbed, isOnString;
@@ -17,7 +20,6 @@ public class Arrow : MonoBehaviour
     
     private float drawStrength;
     private const float stringDrawMultiplier = 0.5f / 0.00102128f;
-    private float strengthMultiplier = 5f;
 
     private Rigidbody rb;
     
@@ -74,14 +76,24 @@ public class Arrow : MonoBehaviour
     {
         if (isOnString)
         {
-            rb.AddForce(transform.forward * strengthMultiplier * drawStrength);
+            rb.AddForce(transform.forward * bowStrength * drawStrength);
         }
         
+        _string.SetBlendShapeWeight(0, 0);
         isGrabbed = false;
         isOnString = false;
         _bow = null;
         _string = null;
         _interactable.trackRotation = true;
         _interactable.throwOnDetach = true;
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (rb.velocity.sqrMagnitude > attachSpeed * attachSpeed)
+        {
+            rb.isKinematic = true;
+            transform.parent = other.transform;
+        }
     }
 }

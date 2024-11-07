@@ -75,6 +75,8 @@ public class Arrow : MonoBehaviour
 
     void OnDrop(SelectExitEventArgs args)
     {
+        rb.isKinematic = false;
+        
         if (isOnString)
         {
             rb.AddForce(transform.forward * bowStrength * drawStrength);

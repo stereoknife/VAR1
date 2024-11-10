@@ -10402,6 +10402,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color: {r: 0, g: 1, b: 1, a: 0}
+  tintTime: 3
 --- !u!4 &1174315260 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7390245093040106075, guid: 99e6d594c0d04a9449d17b90323faf0d, type: 3}
@@ -13628,6 +13629,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color: {r: 1, g: 0, b: 1, a: 0}
+  tintTime: 3
 --- !u!65 &1556693863
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16464,6 +16466,10 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5444532915326508890, guid: 3605515caadf33a4ca9aa3a1220e28e6, type: 3}
+      propertyPath: triggerPressAction.m_Reference
+      value: 
+      objectReference: {fileID: 1996688231578732538, guid: c348712bda248c246b8c49b3db54643f, type: 3}
     - target: {fileID: 7162200844649054882, guid: 3605515caadf33a4ca9aa3a1220e28e6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -20.658
@@ -18681,11 +18687,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8037215116269019772, guid: 7123a13250f97964da105615a954f32e, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8037215116269019772, guid: 7123a13250f97964da105615a954f32e, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8063585251607981087, guid: 7123a13250f97964da105615a954f32e, type: 3}
       propertyPath: m_AnchorMax.y
@@ -18729,11 +18735,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8146728695005691947, guid: 7123a13250f97964da105615a954f32e, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8146728695005691947, guid: 7123a13250f97964da105615a954f32e, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8146728695005691947, guid: 7123a13250f97964da105615a954f32e, type: 3}
       propertyPath: m_AnchorMin.x
@@ -19089,6 +19095,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color: {r: 1, g: 1, b: 0, a: 0}
+  tintTime: 3
 --- !u!65 &2111812690
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -60,4 +60,9 @@ public class CarMount : MonoBehaviour
 
         isMounted = false;
     }
+
+    private void Update()
+    {
+        if ((xrRig.transform.position - mountPoint.position).sqrMagnitude > 0.5f) UnmountCar();
+    }
 }

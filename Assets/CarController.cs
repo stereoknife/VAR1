@@ -1,3 +1,4 @@
+using Unity.VRTemplate;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.XR;
@@ -18,6 +19,8 @@ public class CarController : MonoBehaviour
     public float maxSpeed = 20f;
     private Rigidbody rb;
     private bool isMounted = false; // Tracks if the user is mounted in the car
+    
+    [SerializeField] private XRKnob steering;
 
     void Awake()
     {
@@ -44,7 +47,7 @@ public class CarController : MonoBehaviour
             Brake(brakeInput);
         }
 
-        // Steer(steerInput);
+        Steer(steering.value - 0.5f);
     }
 
     private void Accelerate(float input)

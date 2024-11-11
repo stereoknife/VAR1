@@ -19,6 +19,7 @@ public class CarController : MonoBehaviour
     public float maxSpeed = 20f;
     private Rigidbody rb;
     private bool isMounted = false; // Tracks if the user is mounted in the car
+    private float speed = 0f;
     
     [SerializeField] private XRKnob steering;
 
@@ -52,15 +53,24 @@ public class CarController : MonoBehaviour
 
     private void Accelerate(float input)
     {
-        if (rb.velocity.magnitude < maxSpeed)
+        if (speed < maxSpeed)
         {
-            rb.AddForce(transform.forward * input * accelerationForce, ForceMode.Acceleration);
+            speed += accelerationForce * input * Time.deltaTime;
         }
+        
+        transform.position += Time.deltaTime * speed * transform.forward;
     }
 
     private void Brake(float input)
     {
-        rb.AddForce(-transform.forward * input * brakingForce, ForceMode.Acceleration);
+        if (speed > 0)
+        {
+            speed -= brakingForce * input * Time.deltaTime;
+        }
+
+        if (speed < 0) speed = 0f;
+        
+        transform.position += Time.deltaTime * speed * transform.forward;
     }
 
     private void Steer(float input)
@@ -72,7 +82,7 @@ public class CarController : MonoBehaviour
     public void MountCar()
     {
         isMounted = true;
-        rb.isKinematic = false; // Enable physics
+        //rb.isKinematic = false; // Enable physics
 
         // Enable CarControls and disable other action maps
         inputActions.FindActionMap("CarControls").Enable();
@@ -92,7 +102,7 @@ public class CarController : MonoBehaviour
     {
         isMounted = false;
         rb.isKinematic = true; // Disable physics when unmounted
-        rb.velocity = Vector3.zero;
+        //rb.velocity = Vector3.zero;
 
         // Disable CarControls and re-enable other action maps
         inputActions.FindActionMap("CarControls").Disable();

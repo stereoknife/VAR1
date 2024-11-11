@@ -57,6 +57,18 @@ public class CarMount : MonoBehaviour
 
         // Optionally, move the XR Rig back to a default position
         // xrRig.transform.position = originalPosition;
+        
+        // Activate the character controller
+        var characterController = xrRig.GetComponent<CharacterController>();
+        if (characterController != null)
+        {
+            characterController.enabled = false;
+        }
+
+        var car = GetComponent<CarController>();
+        
+        // Unmount car
+        car.UnmountCar();
 
         isMounted = false;
     }

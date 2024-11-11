@@ -41,6 +41,8 @@ public class CarController : MonoBehaviour
         if (accelerationInput > 0)
         {
             Accelerate(accelerationInput);
+            // Some rolling resistance
+            brakeInput = Mathf.Max(brakeInput, 0.1f);
         }
 
         if (brakeInput > 0)
@@ -48,7 +50,9 @@ public class CarController : MonoBehaviour
             Brake(brakeInput);
         }
 
-        Steer(steering.value - 0.5f);
+        Steer(3 * steering.value - 0.5f);
+        
+        transform.position += Time.deltaTime * speed * transform.forward;
     }
 
     private void Accelerate(float input)
@@ -57,8 +61,6 @@ public class CarController : MonoBehaviour
         {
             speed += accelerationForce * input * Time.deltaTime;
         }
-        
-        transform.position += Time.deltaTime * speed * transform.forward;
     }
 
     private void Brake(float input)
@@ -67,10 +69,7 @@ public class CarController : MonoBehaviour
         {
             speed -= brakingForce * input * Time.deltaTime;
         }
-
         if (speed < 0) speed = 0f;
-        
-        transform.position += Time.deltaTime * speed * transform.forward;
     }
 
     private void Steer(float input)

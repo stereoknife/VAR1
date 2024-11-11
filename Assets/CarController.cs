@@ -50,7 +50,7 @@ public class CarController : MonoBehaviour
             Brake(brakeInput);
         }
 
-        Steer(3 * steering.value - 0.5f);
+        Steer(3 * (steering.value - 0.5f));
         
         transform.position += Time.deltaTime * speed * transform.forward;
     }
